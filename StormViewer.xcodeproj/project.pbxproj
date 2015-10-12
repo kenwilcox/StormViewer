@@ -44,6 +44,8 @@
 		BE94FCC71BCB616C00CF119D /* nssl0049.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = nssl0049.jpg; sourceTree = "<group>"; };
 		BE94FCC81BCB616C00CF119D /* nssl0051.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = nssl0051.jpg; sourceTree = "<group>"; };
 		BE94FCC91BCB616C00CF119D /* nssl0091.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = nssl0091.jpg; sourceTree = "<group>"; };
+		BE94FCD41BCB633C00CF119D /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
+		BE94FCD51BCB633C00CF119D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,8 @@
 		BE94FC9F1BCB5F0700CF119D = {
 			isa = PBXGroup;
 			children = (
+				BE94FCD41BCB633C00CF119D /* LICENSE.md */,
+				BE94FCD51BCB633C00CF119D /* README.md */,
 				BE94FCAA1BCB5F0700CF119D /* StormViewer */,
 				BE94FCA91BCB5F0700CF119D /* Products */,
 			);
