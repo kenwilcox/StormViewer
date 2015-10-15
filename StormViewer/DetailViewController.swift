@@ -11,7 +11,6 @@ import UIKit
 class DetailViewController: UIViewController {
 
   @IBOutlet weak var detailImageView: UIImageView!
-  @IBOutlet weak var detailLabel: UINavigationItem!
   
   var detailItem: String? {
     didSet {
@@ -25,7 +24,6 @@ class DetailViewController: UIViewController {
     if let detail = self.detailItem {
       if let imageView = self.detailImageView {
         imageView.image = UIImage(named: detail)
-        detailLabel.title = detail
       }
     }
   }

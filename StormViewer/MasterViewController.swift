@@ -46,6 +46,7 @@ class MasterViewController: UITableViewController {
         let navigationController = segue.destinationViewController as! UINavigationController
         let controller = navigationController.topViewController as! DetailViewController
         controller.detailItem = objects[indexPath.row]
+        controller.title = objects[indexPath.row]
       }
     }
   }

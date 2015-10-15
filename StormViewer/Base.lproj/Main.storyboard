@@ -50,7 +50,6 @@
                     <navigationItem key="navigationItem" title="Detail" id="mOI-FS-AaM"/>
                     <connections>
                         <outlet property="detailImageView" destination="Kyh-wj-JPb" id="75e-34-zAD"/>
-                        <outlet property="detailLabel" destination="mOI-FS-AaM" id="szC-EQ-pZ3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FJe-Yq-33r" sceneMemberID="firstResponder"/>
