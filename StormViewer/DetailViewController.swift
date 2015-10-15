@@ -10,7 +10,8 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
-  @IBOutlet weak var detailImageView: UIImageView!
+  @IBOutlet weak var scrollView: UIScrollView!
+  var detailImageView: UIImageView!
   
   var detailItem: String? {
     didSet {
@@ -31,6 +32,24 @@ class DetailViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
+    self.detailImageView = UIImageView(image: UIImage(named:"nssl0049.jpg"))
+    //self.detailImageView.frame = self.scrollView.bounds
+    //self.detailImageView.contentMode = .ScaleAspectFit
+    self.scrollView.contentMode = .ScaleAspectFill
+    
+    self.scrollView.delegate = self;
+    self.scrollView.maximumZoomScale = 2.0;
+    self.scrollView.minimumZoomScale = 0.25;
+    let scale = self.scrollView.frame.size.width  / self.detailImageView.frame.size.width
+    self.scrollView.zoomScale = scale;
+    //self.scrollView.zoomScale = 1
+    
+    //self.scrollView.clipsToBounds = true
+    //self.detailImageView.sizeToFit()
+    self.scrollView.contentSize = self.detailImageView.frame.size;
+    
+    self.scrollView.addSubview(self.detailImageView)
+    
     self.configureView()
   }
   
@@ -52,3 +71,8 @@ class DetailViewController: UIViewController {
   
 }
 
+extension DetailViewController: UIScrollViewDelegate {
+  func viewForZoomingInScrollView(scrollView: UIScrollView) -> UIView? {
+    return self.detailImageView
+  }
+}
