@@ -33,23 +33,25 @@ class DetailViewController: UIViewController {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
     self.detailImageView = UIImageView(image: UIImage(named:"nssl0049.jpg"))
-    //self.detailImageView.frame = self.scrollView.bounds
-    //self.detailImageView.contentMode = .ScaleAspectFit
-    self.scrollView.contentMode = .ScaleAspectFill
+    self.detailImageView.frame = self.scrollView.bounds
+    self.detailImageView.contentMode = .ScaleAspectFill
+    self.scrollView.contentMode = .ScaleAspectFit
     
-    self.scrollView.delegate = self;
-    self.scrollView.maximumZoomScale = 2.0;
+    self.scrollView.delegate = self
+    
+    let scale = self.detailImageView.frame.size.width / self.scrollView.frame.size.width
+    self.scrollView.maximumZoomScale = scale;
     self.scrollView.minimumZoomScale = 0.25;
-    let scale = self.scrollView.frame.size.width  / self.detailImageView.frame.size.width
-    self.scrollView.zoomScale = scale;
+    //let scale = self.scrollView.frame.size.width  / self.detailImageView.frame.size.width
+    //self.scrollView.zoomScale = scale;
     //self.scrollView.zoomScale = 1
     
     //self.scrollView.clipsToBounds = true
     //self.detailImageView.sizeToFit()
-    self.scrollView.contentSize = self.detailImageView.frame.size;
     
     self.scrollView.addSubview(self.detailImageView)
-    
+    self.scrollView.contentSize = self.detailImageView.frame.size;
+
     self.configureView()
   }
   
