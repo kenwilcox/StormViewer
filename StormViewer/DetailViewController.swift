@@ -25,6 +25,23 @@ class DetailViewController: UIViewController {
     if let detail = self.detailItem {
       if let imageView = self.detailImageView {
         imageView.image = UIImage(named: detail)
+        imageView.frame = self.scrollView.bounds
+        self.scrollView.contentSize = imageView.bounds.size
+        self.scrollView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+        self.scrollView.delegate = self
+        
+        let imageViewSize = imageView.bounds.size
+        let scrollViewSize = scrollView.bounds.size
+        let widthScale = scrollViewSize.width / imageViewSize.width
+        let heightScale = scrollViewSize.height / imageViewSize.height
+        
+        let zoomScale = min(widthScale, heightScale)
+        self.scrollView.maximumZoomScale = 4.0
+        self.scrollView.minimumZoomScale = 0.5
+        self.scrollView.zoomScale = zoomScale
+        
+        self.scrollView.contentMode = .ScaleAspectFill
+        //self.scrollView.frame = imageView.bounds
       }
     }
   }
@@ -32,25 +49,8 @@ class DetailViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
-    self.detailImageView = UIImageView(image: UIImage(named:"nssl0049.jpg"))
-    self.detailImageView.frame = self.scrollView.bounds
-    self.detailImageView.contentMode = .ScaleAspectFill
-    self.scrollView.contentMode = .ScaleAspectFit
-    
-    self.scrollView.delegate = self
-    
-    let scale = self.detailImageView.frame.size.width / self.scrollView.frame.size.width
-    self.scrollView.maximumZoomScale = scale;
-    self.scrollView.minimumZoomScale = 0.25;
-    //let scale = self.scrollView.frame.size.width  / self.detailImageView.frame.size.width
-    //self.scrollView.zoomScale = scale;
-    //self.scrollView.zoomScale = 1
-    
-    //self.scrollView.clipsToBounds = true
-    //self.detailImageView.sizeToFit()
-    
+    self.detailImageView = UIImageView(frame: self.scrollView.bounds)
     self.scrollView.addSubview(self.detailImageView)
-    self.scrollView.contentSize = self.detailImageView.frame.size;
 
     self.configureView()
   }
