@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Social
 
 class DetailViewController: UIViewController {
   
@@ -72,15 +73,30 @@ class DetailViewController: UIViewController {
   }
   
   func shareTapped() {
-    let vc = UIActivityViewController(activityItems: [detailImageView.image!], applicationActivities: [])
+    let url:NSURL = NSURL(string: "http://www.photolib.noaa.gov/nssl")!
+    let activityItems = ["Look at this great picture!", detailImageView.image!, url]
+    let vc = UIActivityViewController(activityItems: activityItems, applicationActivities: [])
     
     // If they're on an iPad then we want to make it a popover
     if UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.Pad {
       vc.modalPresentationStyle = .Popover
       vc.popoverPresentationController!.barButtonItem = navigationItem.rightBarButtonItem
     }
-    
     self.presentViewController(vc, animated: true, completion: nil)
+    
+    // Share just to Facebook
+//    let vc = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
+//    vc.setInitialText("Look at this great picture!")
+//    vc.addImage(detailImageView.image!)
+//    vc.addURL(NSURL(string: "http://www.photolib.noaa.gov/nssl"))
+//    presentViewController(vc, animated: true, completion: nil)
+    
+    // Share just to Twitter
+//    let vc = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
+//    vc.setInitialText("Look at this great picture!")
+//    vc.addImage(detailImageView.image!)
+//    vc.addURL(NSURL(string: "http://www.photolib.noaa.gov/nssl"))
+//    presentViewController(vc, animated: true, completion: nil)
   }
   
 }
