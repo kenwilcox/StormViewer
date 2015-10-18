@@ -9,7 +9,7 @@
 import UIKit
 
 class DetailViewController: UIViewController {
-
+  
   @IBOutlet weak var scrollView: UIScrollView!
   var detailImageView: UIImageView!
   
@@ -17,7 +17,32 @@ class DetailViewController: UIViewController {
     didSet {
       // Update the view.
       self.configureView()
+      navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Action, target: self, action: "shareTapped")
     }
+  }
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    // Do any additional setup after loading the view, typically from a nib.
+    self.detailImageView = UIImageView(frame: self.scrollView.bounds)
+    self.scrollView.addSubview(self.detailImageView)
+    
+    self.configureView()
+  }
+  
+  override func viewWillAppear(animated: Bool) {
+    super.viewWillAppear(animated)
+    navigationController?.hidesBarsOnTap = true
+  }
+  
+  override func viewWillDisappear(animated: Bool) {
+    super.viewWillDisappear(animated)
+    navigationController?.hidesBarsOnTap = false
+  }
+  
+  override func didReceiveMemoryWarning() {
+    super.didReceiveMemoryWarning()
+    // Dispose of any resources that can be recreated.
   }
   
   func configureView() {
@@ -46,30 +71,17 @@ class DetailViewController: UIViewController {
     }
   }
   
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
-    self.detailImageView = UIImageView(frame: self.scrollView.bounds)
-    self.scrollView.addSubview(self.detailImageView)
-
-    self.configureView()
+  func shareTapped() {
+    let vc = UIActivityViewController(activityItems: [detailImageView.image!], applicationActivities: [])
+    
+    // If they're on an iPad then we want to make it a popover
+    if UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.Pad {
+      vc.modalPresentationStyle = .Popover
+      vc.popoverPresentationController!.barButtonItem = navigationItem.rightBarButtonItem
+    }
+    
+    self.presentViewController(vc, animated: true, completion: nil)
   }
-  
-  override func viewWillAppear(animated: Bool) {
-    super.viewWillAppear(animated)
-    navigationController?.hidesBarsOnTap = true
-  }
-  
-  override func viewWillDisappear(animated: Bool) {
-    super.viewWillDisappear(animated)
-    navigationController?.hidesBarsOnTap = false
-  }
-  
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
-  }
-  
   
 }
 
