@@ -74,7 +74,7 @@ class DetailViewController: UIViewController {
   
   func shareTapped() {
     let url:NSURL = NSURL(string: "http://www.photolib.noaa.gov/nssl")!
-    let activityItems = ["Look at this great picture!", detailImageView.image!, url]
+    let activityItems = ["Look at this great picture from NOAA!", detailImageView.image!, url]
     let vc = UIActivityViewController(activityItems: activityItems, applicationActivities: [])
     
     // If they're on an iPad then we want to make it a popover
