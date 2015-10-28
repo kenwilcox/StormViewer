@@ -78,7 +78,7 @@ class DetailViewController: UIViewController {
     let vc = UIActivityViewController(activityItems: activityItems, applicationActivities: [])
     
     // If they're on an iPad then we want to make it a popover
-    if UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.Pad {
+    if UIDevice().userInterfaceIdiom == UIUserInterfaceIdiom.Pad {
       vc.modalPresentationStyle = .Popover
       vc.popoverPresentationController!.barButtonItem = navigationItem.rightBarButtonItem
     }
