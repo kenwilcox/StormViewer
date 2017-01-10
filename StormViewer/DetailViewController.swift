@@ -18,7 +18,7 @@ class DetailViewController: UIViewController {
     didSet {
       // Update the view.
       self.configureView()
-      navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Action, target: self, action: "shareTapped")
+      navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(DetailViewController.shareTapped))
     }
   }
   
@@ -31,12 +31,12 @@ class DetailViewController: UIViewController {
     self.configureView()
   }
   
-  override func viewWillAppear(animated: Bool) {
+  override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     navigationController?.hidesBarsOnTap = true
   }
   
-  override func viewWillDisappear(animated: Bool) {
+  override func viewWillDisappear(_ animated: Bool) {
     super.viewWillDisappear(animated)
     navigationController?.hidesBarsOnTap = false
   }
@@ -53,7 +53,7 @@ class DetailViewController: UIViewController {
         imageView.image = UIImage(named: detail)
         imageView.frame = self.scrollView.bounds
         self.scrollView.contentSize = imageView.bounds.size
-        self.scrollView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+        self.scrollView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         self.scrollView.delegate = self
         
         let imageViewSize = imageView.bounds.size
@@ -66,23 +66,23 @@ class DetailViewController: UIViewController {
         self.scrollView.minimumZoomScale = 0.5
         self.scrollView.zoomScale = zoomScale
         
-        self.scrollView.contentMode = .ScaleAspectFill
+        self.scrollView.contentMode = .scaleAspectFill
         //self.scrollView.frame = imageView.bounds
       }
     }
   }
   
   func shareTapped() {
-    let url:NSURL = NSURL(string: "http://www.photolib.noaa.gov/nssl")!
-    let activityItems = ["Look at this great picture from NOAA!", detailImageView.image!, url]
+    let url:URL = URL(string: "http://www.photolib.noaa.gov/nssl")!
+    let activityItems = ["Look at this great picture from NOAA!", detailImageView.image!, url] as [Any]
     let vc = UIActivityViewController(activityItems: activityItems, applicationActivities: [])
     
     // If they're on an iPad then we want to make it a popover
-    if UIDevice().userInterfaceIdiom == UIUserInterfaceIdiom.Pad {
-      vc.modalPresentationStyle = .Popover
+    if UIDevice().userInterfaceIdiom == UIUserInterfaceIdiom.pad {
+      vc.modalPresentationStyle = .popover
       vc.popoverPresentationController!.barButtonItem = navigationItem.rightBarButtonItem
     }
-    self.presentViewController(vc, animated: true, completion: nil)
+    self.present(vc, animated: true, completion: nil)
     
     // Share just to Facebook
 //    let vc = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
@@ -102,7 +102,7 @@ class DetailViewController: UIViewController {
 }
 
 extension DetailViewController: UIScrollViewDelegate {
-  func viewForZoomingInScrollView(scrollView: UIScrollView) -> UIView? {
+  func viewForZooming(in scrollView: UIScrollView) -> UIView? {
     return self.detailImageView
   }
 }

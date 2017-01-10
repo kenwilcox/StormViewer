@@ -13,16 +13,16 @@
 		BE94FCB31BCB5F0700CF119D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE94FCB11BCB5F0700CF119D /* Main.storyboard */; };
 		BE94FCB51BCB5F0700CF119D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE94FCB41BCB5F0700CF119D /* Assets.xcassets */; };
 		BE94FCB81BCB5F0700CF119D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE94FCB61BCB5F0700CF119D /* LaunchScreen.storyboard */; };
-		BE94FCCA1BCB616C00CF119D /* nssl0033.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BE94FCC01BCB616C00CF119D /* nssl0033.jpg */; settings = {ASSET_TAGS = (); }; };
-		BE94FCCB1BCB616C00CF119D /* nssl0034.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BE94FCC11BCB616C00CF119D /* nssl0034.jpg */; settings = {ASSET_TAGS = (); }; };
-		BE94FCCC1BCB616C00CF119D /* nssl0041.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BE94FCC21BCB616C00CF119D /* nssl0041.jpg */; settings = {ASSET_TAGS = (); }; };
-		BE94FCCD1BCB616C00CF119D /* nssl0042.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BE94FCC31BCB616C00CF119D /* nssl0042.jpg */; settings = {ASSET_TAGS = (); }; };
-		BE94FCCE1BCB616C00CF119D /* nssl0043.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BE94FCC41BCB616C00CF119D /* nssl0043.jpg */; settings = {ASSET_TAGS = (); }; };
-		BE94FCCF1BCB616C00CF119D /* nssl0045.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BE94FCC51BCB616C00CF119D /* nssl0045.jpg */; settings = {ASSET_TAGS = (); }; };
-		BE94FCD01BCB616C00CF119D /* nssl0046.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BE94FCC61BCB616C00CF119D /* nssl0046.jpg */; settings = {ASSET_TAGS = (); }; };
-		BE94FCD11BCB616C00CF119D /* nssl0049.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BE94FCC71BCB616C00CF119D /* nssl0049.jpg */; settings = {ASSET_TAGS = (); }; };
-		BE94FCD21BCB616C00CF119D /* nssl0051.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BE94FCC81BCB616C00CF119D /* nssl0051.jpg */; settings = {ASSET_TAGS = (); }; };
-		BE94FCD31BCB616C00CF119D /* nssl0091.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BE94FCC91BCB616C00CF119D /* nssl0091.jpg */; settings = {ASSET_TAGS = (); }; };
+		BE94FCCA1BCB616C00CF119D /* nssl0033.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BE94FCC01BCB616C00CF119D /* nssl0033.jpg */; };
+		BE94FCCB1BCB616C00CF119D /* nssl0034.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BE94FCC11BCB616C00CF119D /* nssl0034.jpg */; };
+		BE94FCCC1BCB616C00CF119D /* nssl0041.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BE94FCC21BCB616C00CF119D /* nssl0041.jpg */; };
+		BE94FCCD1BCB616C00CF119D /* nssl0042.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BE94FCC31BCB616C00CF119D /* nssl0042.jpg */; };
+		BE94FCCE1BCB616C00CF119D /* nssl0043.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BE94FCC41BCB616C00CF119D /* nssl0043.jpg */; };
+		BE94FCCF1BCB616C00CF119D /* nssl0045.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BE94FCC51BCB616C00CF119D /* nssl0045.jpg */; };
+		BE94FCD01BCB616C00CF119D /* nssl0046.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BE94FCC61BCB616C00CF119D /* nssl0046.jpg */; };
+		BE94FCD11BCB616C00CF119D /* nssl0049.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BE94FCC71BCB616C00CF119D /* nssl0049.jpg */; };
+		BE94FCD21BCB616C00CF119D /* nssl0051.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BE94FCC81BCB616C00CF119D /* nssl0051.jpg */; };
+		BE94FCD31BCB616C00CF119D /* nssl0091.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BE94FCC91BCB616C00CF119D /* nssl0091.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -135,11 +135,12 @@
 		BE94FCA01BCB5F0700CF119D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Kenneth Wilcox";
 				TargetAttributes = {
 					BE94FCA71BCB5F0700CF119D = {
 						CreatedOnToolsVersion = 7.0.1;
+						LastSwiftMigration = 0820;
 					};
 				};
 			};
@@ -230,8 +231,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -275,8 +278,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -295,6 +300,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -308,6 +314,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.k3nx.StormViewer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -319,6 +326,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.k3nx.StormViewer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -341,6 +349,7 @@
 				BE94FCBE1BCB5F0700CF119D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
