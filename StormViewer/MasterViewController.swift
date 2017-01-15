@@ -11,7 +11,7 @@ import UIKit
 class MasterViewController: UITableViewController {
   
   var detailViewController: DetailViewController? = nil
-  var objects = [String]()
+  var pictures = [String]()
   
   
   override func viewDidLoad() {
@@ -23,7 +23,7 @@ class MasterViewController: UITableViewController {
     
     for item in items {
       if item.hasPrefix(("nssl")) {
-        objects.append(item)
+        pictures.append(item)
       }
     }
   }
@@ -45,8 +45,8 @@ class MasterViewController: UITableViewController {
       if let indexPath = self.tableView.indexPathForSelectedRow {
         let navigationController = segue.destination as! UINavigationController
         let controller = navigationController.topViewController as! DetailViewController
-        controller.detailItem = objects[indexPath.row]
-        controller.title = objects[indexPath.row]
+        controller.detailItem = pictures[indexPath.row]
+        controller.title = pictures[indexPath.row]
       }
     }
   }
@@ -58,13 +58,13 @@ class MasterViewController: UITableViewController {
   }
   
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return objects.count
+    return pictures.count
   }
   
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
     
-    let object = objects[indexPath.row] 
+    let object = pictures[indexPath.row]
     cell.textLabel!.text = object
     return cell
   }
