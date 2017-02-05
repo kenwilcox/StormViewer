@@ -62,10 +62,9 @@ class MasterViewController: UITableViewController {
   }
   
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+    let cell = tableView.dequeueReusableCell(withIdentifier: "Picture", for: indexPath)
     
-    let object = pictures[indexPath.row]
-    cell.textLabel!.text = object
+    cell.textLabel?.text = pictures[indexPath.row]
     return cell
   }
   
